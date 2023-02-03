@@ -1,14 +1,12 @@
 const express = require('express');
 const path = require('path');
-const html = require('./Routes/index.js');
-const api = require('./Routes/notes.js')
+const html = require('./routes/index.js');
+const api = require('./routes/notes.js')
 const noteData = require('./db/db.json');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-
-
 
 //middlewares
 app.use(express.json());
