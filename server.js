@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const html = require('./routes/index.js');
-const api = require('./routes/notes.js')
+const html = require('./assets/js/index');
+const api = require('./assets/js/notes')
 const noteData = require('./db/db.json');
 
 const PORT = process.env.PORT || 3001;
