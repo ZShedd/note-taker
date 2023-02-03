@@ -12,7 +12,7 @@ class StoredNotes {
         return writeFile('./db/db.json', JSON.stringify(data));
     }
 
- getAllNotes() {
+ getEveryNote() {
         return this.read().then((notes) => {
 
             let parsedNotes;
@@ -38,14 +38,14 @@ addNewNote(note) {
             id: uuidv4(),
         };
         
-        return this.getAllNotes()
+        return this.getEveryNote()
         .then((notes) => [...notes, nextNote])
         .then((savedNotes) => this.write(savedNotes))
         .then(() => nextNote);
     }
 
     removeNoteId(id) {
-        return this.getAllNotes()
+        return this.getEveryNote()
         .then((notes) => notes.filter((note) => note.id!== id))
         .then((justNotes) => this.write(justNotes))
     }

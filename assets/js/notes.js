@@ -3,7 +3,7 @@ const storeJS = require('./store.js');
 
 noteRoute.get('/notes', (req, res) => {
   storeJS
-  .getAllNotes().then((data) => res.json(data));
+  .getEveryNote().then((data) => res.json(data));
 });
 
 // POST Route for a new UX/UI note
